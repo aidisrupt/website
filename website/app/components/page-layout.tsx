@@ -21,7 +21,7 @@ export interface PageLayoutProps {
  */
 export function PageLayout({
     children,
-    withGradient = true,
+    withGradient = false,
     innerPadding = true,
     bgColor,
     minHeight,

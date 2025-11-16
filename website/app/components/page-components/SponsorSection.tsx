@@ -23,9 +23,9 @@ export function SponsorSection({ sponsors, year }: { sponsors: YearSponsors | un
 
     return (
         <Flex flexDirection="column" alignItems="flex-start" marginY={16}>
-            <styled.h2 fontSize="4xl" textAlign="center" color="white">
+            {/* <styled.h2 fontSize="4xl" textAlign="center" color="white">
                 {year} Sponsors
-            </styled.h2>
+            </styled.h2> */}
             <SponsorGroup title="Platinum" sponsorGroups={[{ sponsors: sponsors.platinum, category: 'platinum' }]} />
             <SponsorGroup title="Gold" sponsorGroups={[{ sponsors: sponsors.gold, category: 'gold' }]} />
             <SponsorGroup title="Silver" sponsorGroups={[{ sponsors: sponsors.silver, category: 'silver' }]} />
@@ -33,7 +33,7 @@ export function SponsorSection({ sponsors, year }: { sponsors: YearSponsors | un
             <SponsorGroup title="Room" sponsorGroups={[{ sponsors: sponsors.room, category: 'room' }]} />
             <SponsorGroup title="Digital" sponsorGroups={[{ sponsors: sponsors.digital, category: 'digital' }]} />
             <SponsorGroup
-                title="Other Sponsors"
+                title=""
                 sponsorGroups={[
                     { sponsors: sponsors.community, category: 'community' },
                     { sponsors: sponsors.coffeeCart, category: 'coffeeCart' },
@@ -91,8 +91,6 @@ function SponsorComponent({
     category: keyof typeof sponsorStyles
     zIndex: number
 }) {
-    const { gradientFrom } = getSponsorStyle(category)
-
     return (
         <styled.a
             key={sponsor.name}
@@ -103,17 +101,19 @@ function SponsorComponent({
             display="flex"
             justifyContent="center"
             alignItems="center"
-            border="6px solid #0D0D3F"
+            border="2px solid #ffffffff"
+            bgColor="rgba(255, 255, 255, 0.05)"
             style={{
-                background: `linear-gradient(to bottom, ${gradientFrom}, #151544)`,
                 zIndex: zIndex,
             }}
             width={260}
             height={220}
-            ml={-6}
+            
+            m={4} 
+
             zIndex={1}
             boxShadow="inset -1px 1px 0 0 rgba(255,255,255,0.21)"
-            borderRightRadius="full"
+            borderRadius="xl" 
         >
             <styled.img
                 src={sponsor.logoUrlDarkMode}
@@ -121,13 +121,13 @@ function SponsorComponent({
                 maxWidth={150}
                 width="100%"
                 maxHeight={90}
-                ml={-3}
+                // ml={-3} // You might not need this small negative margin anymore either
                 display="inline-block"
                 objectFit="contain"
             />
-            <styled.h5 position="absolute" left={3} bottom={3} fontSize="xs" color="white" mixBlendMode="soft-light">
+            {/* <styled.h5 position="absolute" left={3} bottom={3} fontSize="xs" color="white" mixBlendMode="soft-light">
                 {category.charAt(0).toUpperCase() + category.slice(1)} Sponsor
-            </styled.h5>
+            </styled.h5> */}
         </styled.a>
     )
 }

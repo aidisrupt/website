@@ -1,4 +1,4 @@
-import Logo from '~/images/svg/logo.svg?react'
+import Logo from '~/images/svg/final_logo.svg?react'
 import { css } from '~/styled-system/css'
 import { Box, Divider, Flex, Grid, styled } from '~/styled-system/jsx'
 import { socialsData } from '../../config/socials-data'
@@ -23,27 +23,15 @@ export const Footer = () => (
             mx="auto"
         >
             <Flex flexGrow={2}>
-                <Logo width={153} />
+                <Logo width={200} />
             </Flex>
             <Flex direction="column" gap={1} fontWeight="medium">
-                <AppLink to="/agenda#previous-years" variant="primary">
-                    Previous Years Sessions
-                </AppLink>
-                {/* <styled.a href={`/speakers`} color="white" _hover={{ color: '#8282FB' }}>
-                    Speakers
-                </styled.a> */}
                 <AppLink to="/agenda" variant="primary">
                     Agenda
                 </AppLink>
-                {/* <styled.a href={`/sponsorship`} color="white" _hover={{ color: '#8282FB' }}>
-                    Sponsorship
-                </styled.a> */}
                 <AppLink to="/about" variant="primary">
                     About
                 </AppLink>
-                {/* <styled.a href={`/blog`} color="white" _hover={{ color: '#8282FB' }}>
-                Blog
-                </styled.a> */}
                 <AppLink to="/faq" variant="primary">
                     FAQ
                 </AppLink>
@@ -52,21 +40,15 @@ export const Footer = () => (
                 </AppLink>
             </Flex>
             <Flex direction="column" gap={1} fontWeight="medium">
-                <AppLink to="/code-of-conduct" variant="primary">
-                    Code Of Conduct
+                <AppLink to="/vision" variant="primary">
+                    Vision
                 </AppLink>
                 <AppLink to="/venue" variant="primary">
                     Venue
                 </AppLink>
-                <AppLink to="/health-policy" variant="primary">
-                    Health Policy
-                </AppLink>
                 <AppLink to="/volunteer" variant="primary">
-                    Work With Us
+                    Want to Volunteer?
                 </AppLink>
-                <styled.a href="mailto:info@dddperth.com" color="#8282FB" _hover={{ color: 'white' }}>
-                    info@dddperth.com
-                </styled.a>
             </Flex>
             <Flex direction="column" gap={4}>
                 {/* <styled.p color="#C2C2FF" fontSize="2xl" lineHeight={1.2} textWrap="balance">

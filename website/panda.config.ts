@@ -1,6 +1,6 @@
 import { defineConfig } from '@pandacss/dev'
 import { createPreset } from '@park-ui/panda-preset'
-import indigo from '@park-ui/panda-preset/colors/indigo'
+import orange from '@park-ui/panda-preset/colors/orange'
 import slate from '@park-ui/panda-preset/colors/slate'
 import typographyPreset from 'pandacss-preset-typography'
 export default defineConfig({
@@ -13,7 +13,7 @@ export default defineConfig({
         typographyPreset(),
         '@pandacss/preset-base',
         createPreset({
-            accentColor: indigo,
+            accentColor: orange,
             grayColor: slate,
             radius: 'sm',
         }),
@@ -104,55 +104,34 @@ export default defineConfig({
                     },
                 },
             },
-            tokens: {
-                colors: {
-                    '2023-green': { value: '#008554' },
-                    '2023-orange': { value: '#F89A1C' },
-                    '2023-pink': { value: '#DA459C' },
-                    '2023-gray': { value: '#58595B' },
-                    '2023-red': { value: '#880007' },
-                    '2023-accessible-orange': { value: '#D97F07' },
-                    '2023-black': { value: '#1d1d1d' },
-                    '2023-white-i': { value: '#FCFCFC' },
-                    '2023-white-ii': { value: '#F5F5F5' },
-                    '2023-gray-light': { value: '#C8C8C8' },
-                    '2023-gray-light-ii': { value: '#EAEAEA' },
-                },
-                fonts: {
-                    display: { value: 'Ubuntu, sans-serif' },
-                    body: { value: 'Ubuntu, sans-serif' },
-                },
-                // sizes: {
-                //   /** xs: 4 */
-                //   xs: { value: '4' },
-                //   /** sm: 8 */
-                //   sm: { value: '8' },
-                //   /** md: 16 */
-                //   md: { value: '16' },
-                //   /** lg: 24 */
-                //   lg: { value: '24' },
-                //   /** xl: 32 */
-                //   xl: { value: '32' },
-                //   /** xxl: 40 */
-                //   xxl: { value: '40' },
-                // },
-                zIndex: {
-                    '9999': { value: 9999 },
-                },
+        tokens: {
+            colors: {
+            'sunset-purple': { value: '#6C3DFF' },     // top gradient
+            'sunset-pink': { value: '#E94057' },       // mid gradient
+            'sunset-orange': { value: '#F27121' },     // bright orange
+            'sunset-yellow': { value: '#FFD452' },     // horizon glow
+            'midnight-blue': { value: '#0B132B' },     // deep navy background
+            'teal-city': { value: '#1B9AAA' },         // teal accents
+            'charcoal': { value: '#121212' },          // outlines
+            'off-white': { value: '#F8F8F8' },         // clean text
+            'shadow-blue': { value: '#2E3A59' },       // dark shadow
+            'overlay-white': { value: 'rgba(255,255,255,0.85)' }, // overlay
             },
-            keyframes: {
-                rotateText: {
-                    '0%': {
-                        transform: 'rotate(0deg)',
-                    },
-                    '100%': {
-                        transform: 'rotate(-360deg)',
-                    },
-                },
+            fonts: {
+            display: { value: '"Press Start 2P", "Ubuntu", sans-serif' },
+            body: { value: 'Inter, "Ubuntu", sans-serif' },
             },
-        },
-    },
+            zIndex: { '9999': { value: 9999 } },
+      },
 
-    // The output directory for your css system
-    outdir: 'app/styled-system',
+      keyframes: {
+        rotateText: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(-360deg)' },
+        },
+      },
+    },
+  },
+
+  outdir: 'app/styled-system',
 })

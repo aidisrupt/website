@@ -1,4 +1,4 @@
-import AboriginalLogo from '~/images/svg/aboriginal_ddd.svg?react'
+import AboriginalLogo from '~/images/svg/Australian_Aboriginal_Flag.svg?react'
 import { Box, Divider, Flex, styled } from '~/styled-system/jsx'
 
 export const Acknowledgement = () => (
@@ -15,8 +15,8 @@ export const Acknowledgement = () => (
             <Divider color="#8D8DFF33" mb={6} />
             <AboriginalLogo width={58} />
             <styled.p fontSize={{ base: 'md', md: 'xl' }} color="#C2C2FF">
-                It’s such a privilege to be able to run this conference and DDD Perth would love to acknowledge the
-                traditional custodians of the land in which DDD is created, presented, and shared, the{' '}
+                It's such a privilege to be able to run this conference and the AI Disrupt team would love to acknowledge the
+                traditional custodians of the land in which this conference is created, presented, and shared, the{' '}
                 <styled.span color="white" fontWeight="semibold">
                     Whadjuk people of the Noongar Nation
                 </styled.span>{' '}

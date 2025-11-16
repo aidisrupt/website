@@ -1,5 +1,6 @@
 import type { LinksFunction } from 'react-router'
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router'
+import { css } from '~/styled-system/css'
 
 import { Settings } from 'luxon'
 import './index.css'
@@ -37,7 +38,7 @@ export default function App() {
                 <Links />
                 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
             </head>
-            <body style={{ backgroundColor: '#0E0E43' }}>
+            <body style={{ background: 'linear-gradient(to bottom, #F27121, #070727)' }}>
                 <Outlet />
                 <ScrollRestoration />
                 <Scripts />

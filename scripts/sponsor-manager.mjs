@@ -5,7 +5,7 @@ import { program } from 'commander'
 import fs from 'fs/promises'
 import inquirer from 'inquirer'
 import path from 'path'
-import { fileURLToPath } from 'url'
+import { fileURLToPath, pathToFileURL } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -167,7 +167,11 @@ async function addSponsor(options) {
     if (launchUI) {
         console.log(chalk.blue('\nLaunching web UI...'))
         const webUIScript = path.join(__dirname, 'add-sponsor.mjs')
-        await import(webUIScript)
+        try {
+            await import(pathToFileURL(webUIScript))
+        } catch (err) {
+            console.error(chalk.red('Failed to launch web UI:'), err.message)
+        }
     }
 }
 
@@ -250,14 +254,22 @@ async function processLogos(options) {
     console.log(chalk.yellow('This will launch the web UI for logo processing'))
 
     const webUIScript = path.join(__dirname, 'add-sponsor.mjs')
-    await import(webUIScript)
+    try {
+        await import(pathToFileURL(webUIScript))
+    } catch (err) {
+        console.error(chalk.red('Failed to launch web UI:'), err.message)
+    }
 }
 
 // Launch Web UI
 async function launchUI() {
     console.log(chalk.blue('\nLaunching Sponsor Management Web UI...\n'))
     const webUIScript = path.join(__dirname, 'add-sponsor.mjs')
-    await import(webUIScript)
+    try {
+        await import(pathToFileURL(webUIScript))
+    } catch (err) {
+        console.error(chalk.red('Failed to launch web UI:'), err.message)
+    }
 }
 
 // Main CLI setup

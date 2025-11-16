@@ -11,6 +11,7 @@ import { getUser, isAdmin } from '~/lib/auth.server'
 import { WEB_URL } from '~/lib/config.server' // Ensure this path is correct
 import { adminDateTimeSessionStorage } from '~/lib/session.server'
 import type { Route } from './+types/_layout'
+import {Flex} from '~/styled-system/jsx'
 
 export async function loader({ context, request }: Route.LoaderArgs) {
     const user = await getUser(request.headers)
@@ -90,7 +91,7 @@ export default function Index() {
     }
 
     return (
-        <div>
+        <Flex direction="column" minHeight="100vh">
             {adminData && (
                 <AdminOverlay
                     user={adminData.user}
@@ -145,7 +146,7 @@ export default function Index() {
             <Outlet />
             <Footer />
             <Acknowledgement />
-        </div>
+        </Flex>
     )
 }
 

@@ -173,12 +173,17 @@ function ContentPageWithSidebar({
     >
 >) {
     return (
-        <Grid gridTemplateColumns={{ base: '1ft', lg: '1fr auto' }}>
+        // <Grid gridTemplateColumns={{ base: '1ft', lg: '1fr auto' }}>
+        <Grid
+            gridTemplateColumns="1fr"
+            justifyItems="center" // centers content horizontally
+            marginX={{ base: 6, lg: 0 }}
+    >
             <styled.main id="content" marginX={{ base: 6, lg: 0 }}>
                 <styled.h1 fontSize="3xl">{frontmatter.title}</styled.h1>
                 <Box className={prose({ size: 'lg' })}>{children}</Box>
             </styled.main>
-            <styled.aside
+            {/* <styled.aside
                 display="flex"
                 flexDirection="column"
                 height="fit-content"
@@ -188,19 +193,19 @@ function ContentPageWithSidebar({
                 shadow="md"
                 p={4}
                 rounded="xl"
-            >
+            > */}
                 {/* <EventDetailsSummary conferenceState={conferenceState} currentPath={currentPath} /> */}
 
-                <ImportantDates
+                {/* <ImportantDates
                     smallSidebar={true}
                     showOnlyLive={true}
                     importantDates={importantDates}
                     currentDate={currentDate}
-                />
+                /> */}
 
                 {/* TODO Important date list */}
                 {/* <ImportantDatesList layout="inline" conference={conference} currentDate={currentDate} /> */}
-            </styled.aside>
+            {/* </styled.aside> */}
         </Grid>
     )
 }

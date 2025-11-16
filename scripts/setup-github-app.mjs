@@ -1028,6 +1028,7 @@ process.on('unhandledRejection', (reason, promise) => {
 })
 
 // Run the script
-if (import.meta.url === `file://${process.argv[1]}`) {
-    main()
-}
+main()
+// if (import.meta.url === `file://${process.argv[1]}`) {
+//     main()
+// }

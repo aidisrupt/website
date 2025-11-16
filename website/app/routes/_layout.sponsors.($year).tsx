@@ -52,7 +52,7 @@ export default function Sponsors() {
                 <p>{cancelledMessage}</p>
             </Box>
             <SponsorSection sponsors={sponsors} year={year} />
-            <ConferenceBrowser conferences={conferences} />
+            {/* <ConferenceBrowser conferences={conferences} /> */}
         </Box>
     ) : !sponsors || Object.keys(sponsors).length === 0 ? (
         <Box color="white" textAlign="center" fontSize="3xl" mt="10">
@@ -62,24 +62,23 @@ export default function Sponsors() {
                     ? 'announced yet.'
                     : `imported from the previous ${conferenceConfigPublic.name} site yet.`}
             </p>
-            <ConferenceBrowser conferences={conferences} />
+            {/* <ConferenceBrowser conferences={conferences} /> */}
         </Box>
     ) : (
         <PageLayout minHeight="100vh">
             <Box width="full">
                 <styled.h1 fontSize="5xl" textAlign="center" color="white" mb="8" mt="8">
-                    DDD Perth {year} Sponsors
+                    AI Disrupt {year} Sponsors
                 </styled.h1>
-                <styled.p fontSize="lg" textAlign="center" color="#C2C2FF" mb="12" maxWidth="800px" mx="auto">
-                    We are grateful to all the sponsors who have supported DDD Perth over the years. Their contribution
-                    makes it possible for us to run this community-driven conference.
+                <styled.p fontSize="lg" textAlign="center" color="#ffffffff" mb="12" maxWidth="800px" mx="auto">
+                    Huge thanks to our incredible sponsors for backing the first-ever AI Disrupt Summit and helping us bring this community-driven event to life.
                 </styled.p>
 
                 <Box mb="16">
                     <SponsorSection sponsors={sponsors} year={year} />
                 </Box>
 
-                <ConferenceBrowser conferences={conferences} />
+                {/* <ConferenceBrowser conferences={conferences} /> */}
             </Box>
         </PageLayout>
     )

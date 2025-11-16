@@ -17,6 +17,7 @@ import { Box, Flex, styled } from '~/styled-system/jsx'
 import { PageLayout } from '~/components/page-layout'
 import type { Route } from './+types/_layout.agenda.($year)'
 
+
 export async function loader({ params, context }: Route.LoaderArgs) {
     if (params.year && !/\d{4}/.test(params.year)) {
         throw redirect($path('/agenda/:year?', { year: undefined }))
@@ -92,7 +93,7 @@ export default function Agenda() {
             </Box>
             {/* Should sponsors be displayed for a cancelled conference? */}
             <SponsorSection sponsors={sponsors} year={year} />
-            <ConferenceBrowser conferences={conferences} />
+            {/* <ConferenceBrowser conferences={conferences} /> */}
         </Box>
     ) : !schedule ? (
         <Box color="white" textAlign="center" fontSize="3xl" mt="10">
@@ -103,7 +104,7 @@ export default function Agenda() {
                     : `imported from the previous ${conferenceConfigPublic.name} site yet.`}
             </p>
             <SponsorSection sponsors={sponsors} year={year} />
-            <ConferenceBrowser conferences={conferences} />
+            {/* <ConferenceBrowser conferences={conferences} /> */}
         </Box>
     ) : (
         <PageLayout>
@@ -167,7 +168,8 @@ export default function Agenda() {
                                     xl={{ mt: 0 }}
                                     fontSize={{ base: 'sm', md: 'md' }}
                                     fontWeight="semibold"
-                                    color="#C2C2FF"
+                                    // CHANGED: Time text color to warm orange/gold to match the image
+                                    color="#F9A825"
                                     role="rowheader"
                                     aria-label={`Time slot starting at ${startTime12}`}
                                 >
@@ -202,7 +204,7 @@ export default function Agenda() {
                     })}
                 </Box>
                 <SponsorSection sponsors={sponsors} year={year} />
-                <ConferenceBrowser conferences={conferences} />
+                {/* <ConferenceBrowser conferences={conferences} /> */}
             </Box>
         </PageLayout>
     )
@@ -224,7 +226,8 @@ function RoomTitle({ room, sponsors }: { room: z.infer<typeof gridRoomSchema>; s
             gridRow="rooms"
             display="none"
             rounded="sm"
-            bgColor="#8D8DFF"
+            // CHANGED: Background color for location headers to match the image
+            bgColor="#9E9EFF"
             color="#070727"
             fontWeight="semibold"
             fontSize="sm"
@@ -346,6 +349,7 @@ function RoomTimeSlot({
         >
             <Box
                 rounded="sm"
+                // UNCHANGED: Kept the original box color as requested
                 bgColor="#1F1F4E"
                 fontSize="sm"
                 height="full"
@@ -380,7 +384,8 @@ function RoomTimeSlot({
                     display="flex"
                     alignItems="center"
                     gap={2}
-                    color="#C2C2FF"
+                    // CHANGED: Detail text to white for better contrast, as in the image
+                    color="white"
                     textWrap="nowrap"
                     fontSize={{ base: 'xs', xl: 'sm' }}
                 >
@@ -401,7 +406,8 @@ function RoomTimeSlot({
                     {startTime12} - {endTime12}
                 </styled.span>
                 {fullSession?.isServiceSession ? null : (
-                    <Flex alignItems="center" gap={2} color="#C2C2FF" textOverflow="ellipsis" textWrap="nowrap" fontSize={{ base: 'xs', xl: 'sm' }}>
+                     // CHANGED: Detail text to white for better contrast, as in the image
+                    <Flex alignItems="center" gap={2} color="white" textOverflow="ellipsis" textWrap="nowrap" fontSize={{ base: 'xs', xl: 'sm' }}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 16 16"
@@ -420,7 +426,8 @@ function RoomTimeSlot({
                     </Flex>
                 )}
                 {fullSession?.speakers?.length ? (
-                    <Flex alignItems="center" gap={2} color="#C2C2FF" fontSize={{ base: 'xs', xl: 'sm' }}>
+                     // CHANGED: Detail text to white for better contrast, as in the image
+                    <Flex alignItems="center" gap={2} color="white" fontSize={{ base: 'xs', xl: 'sm' }}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 16 16"

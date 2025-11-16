@@ -33,22 +33,19 @@ export function HeroTitlePanel() {
                             gap={6}
                         >
                             <p>
-                                DDD Perth is Perth's largest community run conference for the tech community. Our goal
-                                is to create an approachable event that appeals to the whole community, especially
-                                people that don't normally get to attend or speak at conferences. The conference is run
-                                on a Saturday, and strives to be inclusive of everyone in the Perth tech community.
+                                AI Disrupt Summit is a one-day, hands-on event bringing together Western Australia's AI community—engineers,
+                                founders, researchers, and investors who aren't just talking about the future of AI, they're building it. 
+                                Taking place on Saturday, December 13, 2025, at Curtin University as part of West Tech Fest, the summit 
+                                features practical workshops, startup demos, and inspiring talks from some of Australia's leading AI thinkers. 
+                                From hands-on hackathons to live demonstrations, this event is designed to give you the tools, knowledge, 
+                                and connections to turn ideas into real-world AI solutions.
                             </p>
                             <p>
-                                DDD Perth started out its life as part of the Developer! Developer! Developer! series of
-                                events and while our heritage is as a developer-focussed conference, DDD Perth is not
-                                just for developers, but for all professionals in the software industry. These days we
-                                don't expand DDD - it's not an acronym for us anymore, but if people insist then we
-                                might say Designer, Developer and Data Scientist, or is it DevOps, Data architect,
-                                distributed tester?
-                            </p>
-                            <p>
-                                Check out the agenda and talks from previous years , or hear more about how we do what
-                                we do on our blog.
+                                Unlike traditional conferences, AI Disrupt Summit is all about building and collaborating. Attendees can 
+                                join interactive sessions, connect with mentors and industry leaders, explore cutting-edge local AI startups 
+                                at the expo, and learn what investors are looking for in the next wave of AI ventures. With limited spots and a 
+                                focus on practical experience, this is your chance to plug into WA's most innovative AI community, develop real
+                                 projects, and shape the future of technology—plus enjoy networking over breakfast and a sundowner to cap off the day.
                             </p>
                         </Flex>
                         <Box

@@ -16,7 +16,7 @@ export const conferenceConfig = {
 
     conferences: {
         '2018': conference2018,
-        '2019': conference2019,
+        // '2019': conference2019,
         '2021': conference2021,
         '2020': {
             kind: 'cancelled',

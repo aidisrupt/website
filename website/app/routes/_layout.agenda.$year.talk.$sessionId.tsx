@@ -123,7 +123,7 @@ export default function Agenda() {
                     </styled.div>
                 ) : null}
                 <SponsorSection sponsors={sponsors} year={year} />
-                <ConferenceBrowser conferences={conferences} />
+                {/* <ConferenceBrowser conferences={conferences} /> */}
             </Box>
         </Flex>
     )

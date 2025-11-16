@@ -1,6 +1,6 @@
 import { $path } from 'safe-routes'
 import { conferenceConfigPublic } from '~/config/conference-config-public'
-import Logo from '~/images/svg/logo.svg?react'
+import Logo from '~/images/svg/final_logo.svg?react'
 import type { ConferenceVenue } from '~/lib/conference-state-client-safe'
 import { Box, Flex, Grid, styled } from '~/styled-system/jsx'
 import { AppLink } from '../app-link'
@@ -18,7 +18,7 @@ export function Header({
     venue: ConferenceVenue | undefined
 }) {
     return (
-        <styled.header position="relative" bgColor="#070727" w="100%" display="flex" zIndex="10" py={4}>
+        <styled.header position="relative" bgColor="transparent" w="100%" display="flex" zIndex="10" py={4}>
             <HeaderContainer>
                 <Grid
                     gridTemplateAreas={{
@@ -44,7 +44,12 @@ export function Header({
                             display="flex"
                             justifyContent="flex-start"
                             alignItems="center"
-                            width={{ base: 110, md: 180 }}
+                            width={{
+                                base: 120, // Slightly bigger on mobile
+                                md: 180,   // Medium screens
+                                lg: 220,   // Large screens
+                                xl: 240    // Extra-large screens
+                            }}
                         >
                             <Logo />
                         </AppLink>
@@ -60,8 +65,8 @@ export function Header({
                         fontSize={{ base: 'sm', md: 'md' }}
                         fontWeight={600}
                     >
-                        <AppLink to="/sponsorship" variant="primary">
-                            Sponsorship
+                        <AppLink to="/about" variant="primary">
+                            About
                         </AppLink>
                         <AppLink to="/sponsors" variant="primary">
                             Sponsors
@@ -74,8 +79,11 @@ export function Header({
                                 Venue
                             </AppLink>
                         ) : null}
-                        <AppLink to="/about" variant="primary">
-                            About
+                        <AppLink to="/tickets" variant="primary">
+                            Tickets
+                        </AppLink>
+                        <AppLink to="/team" variant="primary">
+                            Team
                         </AppLink>
                     </Flex>
 

@@ -155,8 +155,8 @@ declare module "safe-routes" {
             | 'routes/blog.rss[.xml]'
             | 'routes/app-content.$'
             | 'routes/sitemap[.xml]'
-            | 'routes/[robots.txt]'
             | 'routes/tito-webhook'
+            | 'routes/[robots.txt]'
             | 'routes/auth.logout'
             | 'routes/app-config'
             | 'routes/auth.login'
@@ -166,8 +166,8 @@ declare module "safe-routes" {
             | 'routes/_layout.agenda.($year)'
             | 'routes/_layout.blog._index'
             | 'routes/_layout.blog.$slug'
-            | 'routes/_layout._index'
             | 'routes/_layout.voting'
+            | 'routes/_layout._index'
             | 'routes/_layout.app'
             | 'routes/_layout.$'
             | 'routes/admin'
@@ -176,8 +176,8 @@ declare module "safe-routes" {
             | 'routes/admin.dashboard'
             | 'routes/admin.settings'
             | 'routes/admin.content'
-            | 'routes/admin._index'
-            | 'routes/admin.voting';
+            | 'routes/admin.voting'
+            | 'routes/admin._index';
 
   export function $path<
     Route extends keyof Routes,
